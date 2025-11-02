@@ -8,6 +8,9 @@ import edu.icet.repository.FoodItemsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Service
 public class FoodItemService {
 
@@ -24,5 +27,23 @@ public class FoodItemService {
                 foodItems.getAvailable_amount()
 
         ));
+
+
+    }
+
+    public List<FoodItems> getAll(){
+        List<FoodItemsEntity> all = foodItemsRepository.findAll();
+        List<FoodItems> foodItemsList = new ArrayList<>();
+
+        for(FoodItemsEntity foodItemsEntity : all){
+            foodItemsList.add(new FoodItems(
+                    foodItemsEntity.getId(),
+                    foodItemsEntity.getCategory(),
+                    foodItemsEntity.getName(),
+                    foodItemsEntity.getAvailable_amount()
+            ));
+
+        }
+        return foodItemsList;
     }
 }
