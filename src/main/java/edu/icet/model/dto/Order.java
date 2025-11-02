@@ -15,5 +15,7 @@ public class Order {
     private String customerId;
     private String status;
     private String item_name;
-    private String item_quantity;
+    private int item_quantity;
+    private int unitPrice;
+    private int total;
 }

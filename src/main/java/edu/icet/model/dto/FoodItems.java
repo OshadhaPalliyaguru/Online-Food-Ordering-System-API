@@ -11,5 +11,5 @@ public class FoodItems {
     private String id;
     private String category;
     private String name;
-    private String available_amount;
+    private int available_amount;
 }

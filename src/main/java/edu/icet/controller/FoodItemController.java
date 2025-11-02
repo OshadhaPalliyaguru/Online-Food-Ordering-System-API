@@ -24,4 +24,9 @@ foodItemService.add(foodItems);
     public List<FoodItems> availableItems(){
         return foodItemService.getAll();
     }
+
+    @GetMapping("get/{getbyId}")
+    public FoodItems getId(@PathVariable String getbyId){
+        return foodItemService.getId(getbyId);
+    }
 }
