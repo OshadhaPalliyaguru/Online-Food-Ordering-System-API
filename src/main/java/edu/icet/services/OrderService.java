@@ -16,6 +16,8 @@ public class OrderService {
     @Autowired
     OrderRepository orderRepository;
 
+    //place order by single food item
+
     public void addOrder(Order order){
         orderRepository.save( new OrderEntity(
                         order.getId(),
@@ -29,6 +31,7 @@ public class OrderService {
                 )
         );
     }
+
 
     public Order getId(String id){
         Optional<OrderEntity> byId = orderRepository.findById(id);

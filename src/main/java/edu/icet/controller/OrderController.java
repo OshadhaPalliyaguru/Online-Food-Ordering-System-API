@@ -14,6 +14,7 @@ public class OrderController {
     @Autowired
     OrderService orderService;
 
+    //place order by single food item
     @PostMapping("/placeOrder")
     public void add(@RequestBody Order orders){
         orderService.addOrder(orders);
